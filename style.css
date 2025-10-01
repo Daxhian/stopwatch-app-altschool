@@ -1,0 +1,164 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Center stopwatch using flexbox */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #5c5a5a;
+    color: #ffffff;
+}
+
+.stopwatch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #2c2c2c;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Digital clock style for time display */
+#time-display {
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: #000;
+    padding: 20px 40px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    min-width: 300px;
+}
+
+/* Button styling with hover effects */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+#start-button {
+    background: #0c5a0f;
+    /* Green colour for start button */
+    color: #ffffff;
+}
+
+#start-button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+    color: black;
+}
+
+#stop-button {
+    background: #85251e;
+    /* Red colour for stop button */
+    color: #ffffff;
+}
+
+#stop-button:hover {
+    background: #d32f2f;
+    transform: scale(1.05);
+    color: black;
+}
+
+#reset-button,
+#lap-button {
+    background: #1e3d57;
+    /* Blue colour for reset and lap buttons */
+    color: #ffffff;
+}
+
+#reset-button:hover,
+#lap-button:hover {
+    background: #1976d2;
+    transform: scale(1.05);
+    color: black;
+}
+
+/* Lap list style */
+#lap-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border-radius: 5px;
+}
+
+#lap-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #444;
+}
+
+/* Responsive design for mobile view */
+@media (max-width: 530px) {
+    #time-display {
+        font-size: 1.5rem;
+        padding: 15px 20px;
+        width: 60vw;
+        min-width: 20vw;
+
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .stopwatch-container {
+        padding: 15px;
+        width: 70vw;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #start-button,
+    #stop-button,
+    #reset-button,
+    #lap-button {
+        width: 60vw;
+    }
+}
+
+/* Responsive design for smaller screen*/
+@media (max-width: 340px) {
+    #time-display {
+        font-size: 1rem;
+        padding: 15px 20px;
+        width: 60vw;
+        min-width: 20vw;
+    }
+}
+
+/* Responsive design for smallest screen*/
+@media (max-width: 250px) {
+    #time-display {
+        font-size: 0.5rem;
+        padding: 15px 20px;
+        width: 60vw;
+        min-width: 20vw;
+    }
+}
