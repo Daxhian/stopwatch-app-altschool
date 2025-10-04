@@ -15,14 +15,15 @@
   </head>
   <body>
     <div class="stopwatch-container">
-      <div id="time-display">00:00:00.000</div>
+      <button id="reset-button">CLEAR</button>
+      <div id="time-display">00:00:00.00</div>
       <div class="buttons">
-        <button id="start-button">START</button>
-        <button id="stop-button">STOP</button>
-        <button id="reset-button">RESET</button>
-        <button id="lap-button">LAP</button>
+        <button id="toggle-button">START/STOP</button>
+        <button id="lap-button" disabled>LAP</button>
       </div>
-      <ul id="lap-list"></ul>
+      <div id="lap-list-container">
+        <ul id="lap-list"></ul>
+      </div>
     </div>
   </body>
 </html>

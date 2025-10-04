@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #5c5a5a;
+    background: #b12625;
     color: #ffffff;
 }
 
@@ -22,16 +22,15 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px;
-    background: #2c2c2c;
+    background: transparent;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Digital clock style for time display */
 #time-display {
-    font-size: 3.5rem;
+    font-size: 6.5rem;
     font-weight: bold;
-    background: #000;
+    background: transparent;
     padding: 20px 40px;
     border-radius: 10px;
     letter-spacing: 2px;
@@ -43,6 +42,7 @@ body {
 .buttons {
     display: flex;
     gap: 10px;
+    padding: 2rem 0 0 0;
 }
 
 button {
@@ -55,68 +55,70 @@ button {
     transition: background 0.3s, transform 0.1s;
 }
 
-#start-button {
-    background: #0c5a0f;
-    /* Green colour for start button */
+#toggle-button {
+    background: #fbdb68; /* Yellow for START/STOP */
     color: #ffffff;
+    font-size: 1.5rem;
+    border-radius: 14rem;
+    height: 11rem;
+    width: 16rem;
+    box-shadow: 50px 30px 14px rgba(0, 0, 0, 0.5);
 }
 
-#start-button:hover {
-    background: #45a049;
-    transform: scale(1.05);
-    color: black;
-}
-
-#stop-button {
-    background: #85251e;
-    /* Red colour for stop button */
-    color: #ffffff;
-}
-
-#stop-button:hover {
-    background: #d32f2f;
+#toggle-button:hover {
+    background: #887536; /* Darker yellow on hover */
     transform: scale(1.05);
     color: black;
 }
 
 #reset-button,
 #lap-button {
-    background: #1e3d57;
-    /* Blue colour for reset and lap buttons */
+    background: transparent;
     color: #ffffff;
+    font-size: 3rem;
+    height: 11rem;
+    width: 16rem;
 }
 
 #reset-button:hover,
 #lap-button:hover {
-    background: #1976d2;
     transform: scale(1.05);
-    color: black;
+    color: #fbdb68;
+}
+
+#reset-button:disabled,
+#lap-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* Lap list style */
 #lap-list {
     list-style: none;
-    max-height: 200px;
+    max-height: 10rem;
     overflow-y: auto;
     width: 100%;
-    padding: 10px;
-    background: #333;
+    padding: 0.4rem;
+    background: transparent;
     border-radius: 5px;
 }
 
 #lap-list li {
-    padding: 5px 0;
-    border-bottom: 1px solid #444;
+    padding: 0.3rem 0;
+    border-bottom: 3px solid black;
+}
+
+#lap-list-container {
+    margin-top: 3.5rem;
 }
 
 /* Responsive design for mobile view */
 @media (max-width: 530px) {
     #time-display {
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 15px 20px;
         width: 60vw;
         min-width: 20vw;
-
     }
 
     button {
@@ -135,30 +137,40 @@ button {
         align-items: center;
     }
 
-    #start-button,
-    #stop-button,
+    #toggle-button,
     #reset-button,
     #lap-button {
         width: 60vw;
+        min-height: 30vh;
+        font-size: 2rem;
     }
 }
 
-/* Responsive design for smaller screen*/
+/* Responsive design for smaller screen */
 @media (max-width: 340px) {
     #time-display {
         font-size: 1rem;
         padding: 15px 20px;
-        width: 60vw;
-        min-width: 20vw;
+        width: 40vw;
+        min-width: 10vw;
+        min-height: 10vh;
     }
+
+    #toggle-button,
+    #reset-button,
+    #lap-button {
+        width: 30vw;
+        min-height: 15vh;
+        font-size: 1rem;
 }
 
-/* Responsive design for smallest screen*/
+/* Responsive design for smallest screen */
 @media (max-width: 250px) {
     #time-display {
         font-size: 0.5rem;
         padding: 15px 20px;
         width: 60vw;
-        min-width: 20vw;
+        min-width: 10vw;
+        min-height: 10vh;
     }
 }
